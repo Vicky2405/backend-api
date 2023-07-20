@@ -58,7 +58,7 @@ exports.update = async (req,res) => {
 
 exports.deleteData = async (req,res) => {
 	try{
-		const data = await Post.remove({ _id: req.params.postId})
+		const data = await Post.findByIdAndRemove(req.params.postId);
 		res.json(data)
 	}
 	catch(err)
